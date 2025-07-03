@@ -1,4 +1,6 @@
 import { getTransactions } from "@/lib/data";
+import { deleteTransaction } from "@/lib/action";
+import Link from "next/link";
 export default async function Home() {
   const transactions = await getTransactions();
   return (
@@ -23,7 +25,17 @@ export default async function Home() {
                   Rp{t.amount.toLocaleString("id-ID")}
                 </span>
               </div>
-              {/* Tombol Edit & Hapus akan kita tambahkan nanti */}
+              <div className="flex items-center gap-2">
+                {/* Tombol Edit akan kita buat nanti */}
+                <form action={deleteTransaction.bind(null, t._id)}>
+                  <button
+                    type="submit"
+                    className="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-3 rounded text-xs"
+                  >
+                    Hapus
+                  </button>
+                </form>
+              </div>
             </li>
           ))}
         </ul>

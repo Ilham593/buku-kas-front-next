@@ -36,3 +36,20 @@ export async function addTransaction(formData) {
   revalidatePath("/");
   return redirect("/");
 }
+
+export async function deleteTransaction(id) {
+  try {
+    const re = await fetch(`${process.env.API_URL}/${id}`, {
+      method: "DELETE",
+    })
+
+    if (!re.ok) {
+      throw new Error("Gagal menghapus transaksi, respons backend tidak OK.");
+    }
+  }catch (error) {
+    console.log("error deleteTransaction", error);
+    return;
+  }
+
+  revalidatePath("/");
+}
