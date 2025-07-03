@@ -1,5 +1,5 @@
 import { getTransactions } from "@/lib/data";
-import { deleteTransaction } from "@/lib/action";
+import { deleteTransaction, updateTransaction } from "@/lib/action";
 import Link from "next/link";
 export default async function Home() {
   const transactions = await getTransactions();
@@ -27,6 +27,12 @@ export default async function Home() {
               </div>
               <div className="flex items-center gap-2">
                 {/* Tombol Edit akan kita buat nanti */}
+                <Link
+                  href={`/edit/${t._id}`}
+                  className="bg-cyan-400 hover:bg-cyan-500 text-white font-bold py-1 px-3 rounded text-xs"
+                >
+                  Edit
+                </Link>
                 <form action={deleteTransaction.bind(null, t._id)}>
                   <button
                     type="submit"

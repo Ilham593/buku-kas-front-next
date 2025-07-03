@@ -15,3 +15,18 @@ export async function getTransactions() {
     return [];
   }
 }
+
+
+export async function getTransactionById(id) {
+  try {
+    const res = await fetch(`${process.env.API_URL}/${id}`, {
+      cache: "no-store",
+    });
+    if (!res.ok) throw new Error("Gagal mengambil detail transaksi");
+    const data = await res.json();
+    return data.data;
+  } catch (error) {
+    console.error(error);
+    return null; // Kembalikan null jika gagal
+  }
+}
