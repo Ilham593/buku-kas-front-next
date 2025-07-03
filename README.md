@@ -1,11 +1,3 @@
-Tentu saja, kak. Iya, saya sudah menerima dan memeriksa file-file dari repository Anda.
-
-File `README.md` yang ada sekarang adalah template bawaan dari Next.js. Mari kita ganti dengan yang lebih deskriptif dan sesuai dengan proyek "Buku Kas" kita.
-
-Silakan buka file `README.md` di proyek `buku-kas-nextjs` Anda, hapus semua isinya, dan ganti dengan konten di bawah ini.
-
------
-
 # Buku Kas Digital - Versi Next.js
 
 Ini adalah frontend untuk aplikasi **Buku Kas Digital** yang dibangun ulang menggunakan **Next.js** dengan **App Router**. Proyek ini bertujuan untuk menciptakan aplikasi yang lebih cepat, efisien, dan sesuai dengan standar industri modern untuk aplikasi web berbasis React.
@@ -36,7 +28,6 @@ Untuk menjalankan proyek ini di komputer lokal Anda, ikuti langkah-langkah berik
 **1. Clone Repository**
 
 ```bash
-# Ganti dengan URL repository Anda
 git clone https://github.com/nama-anda/buku-kas-nextjs.git
 cd buku-kas-nextjs
 ```
@@ -72,11 +63,3 @@ Dalam file `package.json`, Anda akan menemukan beberapa skrip:
   - `npm run lint`: Menjalankan linter untuk memeriksa kualitas kode.
 
 -----
-
-Setelah Anda mengganti isi `README.md`, jangan lupa di-commit ya, kak.
-
-```bash
-git add README.md
-git commit -m "docs: Perbarui README untuk proyek Next.js"
-git push origin main
-```
